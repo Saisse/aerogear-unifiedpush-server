@@ -54,6 +54,8 @@
         <module>service</module>
         <module>jaxrs</module>
         <module>server</module>
+        <module>keycloak-server</module>
+        <module>ear</module>
 	</modules>
 
     <dependencyManagement>
