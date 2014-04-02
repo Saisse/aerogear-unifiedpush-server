@@ -1,4 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  JBoss, Home of Professional Open Source
+  Copyright Red Hat, Inc., and individual contributors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
 <jboss-deployment-structure>
+
+    <ear-subdeployments-isolated>true</ear-subdeployments-isolated>
+
     <sub-deployment name="keycloak-server.war">
         <exclusions>
 
@@ -29,4 +49,29 @@
             <module name="org.jboss.resteasy.resteasy-yaml-provider" />
         </exclusions>
     </sub-deployment>
+
+    <sub-deployment name="ag-push.war">
+        <exclusions>
+            <!-- Exclude Version cxf of JBOSS -->
+            <module name="org.apache.cxf" />
+            <!-- Exclude JAVA EE of JBOSS (javax.ws..) => Add dependency javax.annotation -->
+            <module name="javaee.api" />
+            <!-- Exclude RestEasy conflict (javax.ws.rs.ext.RunDelegate) -->
+            <module name="javax.ws.rs.api"/>
+            <module name="org.codehaus.jackson.jackson-core-asl" />
+            <module name="org.jboss.resteasy.resteasy-atom-provider" />
+            <module name="org.jboss.resteasy.resteasy-cdi" />
+            <module name="org.jboss.resteasy.resteasy-crypto" />
+            <module name="org.jboss.resteasy.resteasy-jackson-provider" />
+            <module name="org.jboss.resteasy.resteasy-jaxb-provider" />
+            <module name="org.jboss.resteasy.resteasy-jaxrs" />
+            <module name="org.jboss.resteasy.resteasy-jettison-provider" />
+            <module name="org.jboss.resteasy.resteasy-jsapi" />
+            <module name="org.jboss.resteasy.resteasy-json-p-provider" />
+            <module name="org.jboss.resteasy.resteasy-multipart-provider" />
+            <module name="org.jboss.resteasy.resteasy-validator-provider-11" />
+            <module name="org.jboss.resteasy.resteasy-yaml-provider" />
+        </exclusions>
+    </sub-deployment>
+
 </jboss-deployment-structure>
