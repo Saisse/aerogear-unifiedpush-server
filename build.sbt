@@ -15,9 +15,9 @@ lazy val modelJpa = Project("unifiedpush-model-jpa", file("model/jpa")).dependsO
 
 lazy val service = Project("unifiedpush-service", file("service")).dependsOn(modelJpa)
 
-lazy val push = Project("unifiedpush-push", file("push")).dependsOn(modelApi, service)
+lazy val push = Project("unifiedpush-push", file("push")).dependsOn(service)
 
-lazy val jaxrs = Project("unifiedpush-jaxrs", file("jaxrs")).dependsOn(service, push)
+lazy val jaxrs = Project("unifiedpush-jaxrs", file("jaxrs")).dependsOn(push)
 
 lazy val server = Project("unifiedpush-server", file("server"))
-    .dependsOn(modelJpa, service, push, jaxrs).settings(webSettings :_*)
+    .dependsOn(jaxrs).settings(webSettings :_*)

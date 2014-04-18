@@ -14,7 +14,9 @@ libraryDependencies ++= Seq(
   , "org.jboss.spec.javax.ejb" % "jboss-ejb-api_3.1_spec" % "1.0.2.Final" % "provided"
   , "org.jboss.aerogear" % "aerogear-security" % "1.3.1" % "provided"
   , "net.iharder" % "base64" % "2.3.8"
-  , "org.jboss.resteasy" % "resteasy-multipart-provider" % "2.3.2.Final"
-  , "org.jboss.aerogear.unifiedpush" % "unifiedpush-service" % version.value changing()
+  , "org.jboss.resteasy" % "resteasy-multipart-provider" % "2.3.2.Final" excludeAll(
+      ExclusionRule(organization = "commons-logging")
+    , ExclusionRule(organization = "commons-codec")
+  )
   , "org.jboss.aerogear.unifiedpush" % "unifiedpush-push" % version.value changing()
 )

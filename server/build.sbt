@@ -16,9 +16,6 @@ libraryDependencies ++= Seq(
  , "org.jboss.spec.javax.servlet" % "jboss-servlet-api_3.0_spec" % "1.0.2.Final" % "provided"
  , "org.jboss.aerogear" % "aerogear-security" % "1.3.1"
  , "org.jboss.aerogear" % "aerogear-security-picketlink" % "1.3.1"
- , "org.jboss.aerogear.unifiedpush" % "unifiedpush-model-jpa" % version.value changing()
- , "org.jboss.aerogear.unifiedpush" % "unifiedpush-service" % version.value changing()
- , "org.jboss.aerogear.unifiedpush" % "unifiedpush-push" % version.value changing()
  , "org.jboss.aerogear.unifiedpush" % "unifiedpush-jaxrs" % version.value changing()
  , "org.apache.tomcat.embed" % "tomcat-embed-core"         % "7.0.22" % "container"
  , "org.apache.tomcat.embed" % "tomcat-embed-logging-juli" % "7.0.22" % "container"
