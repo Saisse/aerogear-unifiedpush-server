@@ -17,6 +17,7 @@ libraryDependencies ++= Seq(
   , "org.jboss.resteasy" % "resteasy-multipart-provider" % "2.3.2.Final" excludeAll(
       ExclusionRule(organization = "commons-logging")
     , ExclusionRule(organization = "commons-codec")
+    , ExclusionRule(organization = "javax.servlet")
   )
   , "org.jboss.aerogear.unifiedpush" % "unifiedpush-push" % version.value changing()
 )
