@@ -11,4 +11,3 @@ libraryDependencies ++= Seq(
   , "org.jboss.spec.javax.ejb" % "jboss-ejb-api_3.1_spec" % "1.0.2.Final" % "provided"
   , "org.jboss.aerogear.unifiedpush" % "unifiedpush-model-jpa" % version.value changing()
 )
-

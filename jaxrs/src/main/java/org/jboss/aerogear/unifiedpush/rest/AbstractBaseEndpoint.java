@@ -37,7 +37,7 @@ public abstract class AbstractBaseEndpoint {
 
     protected final Logger logger = Logger.getLogger(getClass().getName());
 
-    @Inject
+//    @Inject
     private Validator validator;
 
     /**

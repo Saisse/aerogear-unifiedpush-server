@@ -53,7 +53,7 @@ public class PicketLinkDefaultUsers {
         this.identityManager = partitionManager.createIdentityManager();
         this.relationshipManager = partitionManager.createRelationshipManager();
 
-        final String DEFAULT_PASSWORD = "123";
+        final String DEFAULT_PASSWORD = "Admin000";
         final String DEFAULT_DEVELOPER = "developer";
         final String DEFAULT_ADMIN = "admin";
 
@@ -86,10 +86,9 @@ public class PicketLinkDefaultUsers {
             adminUser = new User(DEFAULT_ADMIN);
             identityManager.add(adminUser);
 
-            Calendar calendar = expirationDate();
             Password password = new Password(DEFAULT_PASSWORD.toCharArray());
 
-            identityManager.updateCredential(adminUser, password, new Date(), calendar.getTime());
+            identityManager.updateCredential(adminUser, password, new Date(), null);
 
             Role roleAdmin = new Role(UserRoles.ADMIN);
 

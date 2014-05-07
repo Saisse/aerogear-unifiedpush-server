@@ -20,6 +20,12 @@ libraryDependencies ++= Seq(
  , "org.apache.tomcat.embed" % "tomcat-embed-core"         % "7.0.22" % "container"
  , "org.apache.tomcat.embed" % "tomcat-embed-logging-juli" % "7.0.22" % "container"
  , "org.apache.tomcat.embed" % "tomcat-embed-jasper"       % "7.0.22" % "container"
+ , "org.slf4j" % "slf4j-simple"       % "1.7.2"
+// , "org.hibernate" % "hibernate-validator"       % "5.1.0.Final"
+// , "org.hibernate" % "hibernate-validator-cdi"       % "5.1.0.Final"
+ , "org.jboss.resteasy" % "resteasy-cdi" % "2.3.2.Final"
+// , "org.jboss.weld.servlet" % "weld-servlet" % "2.1.2.Final" exclude("org.jboss.weld", "weld-core-jsf")
+// , "org.jboss.weld.servlet" % "weld-tomcat-support" % "1.0.1-Final"
 )
 
 artifactName in packageWar := {
